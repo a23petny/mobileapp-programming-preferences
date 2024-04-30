@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,9 @@ public class MainActivity2 extends AppCompatActivity {
         EditText newPrefText=new EditText(this);
         newPrefText=(EditText)findViewById(R.id.settingseditview);
 
+        Log.d("asdasdasdasdasd",newPrefText.getText().toString());
         // Store the new preference
+        /*
         SharedPreferences.Editor myPreferenceEditor;
         myPreferenceEditor.putString("MyAppPreferenceString", newPrefText.getText().toString());
         myPreferenceEditor.apply();
@@ -35,6 +36,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         // Clear the EditText
         newPrefText.setText("");
-
+        */
     }
 }

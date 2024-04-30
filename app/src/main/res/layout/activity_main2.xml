@@ -8,7 +8,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/settingseditview"/>
+        android:id="@+id/settingseditview"
+        app:layout_constraintBottom_toTopOf="@+id/prefButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <Button
         android:text="@string/save"
         android:layout_width="wrap_content"
@@ -23,7 +27,11 @@
         android:layout_below="@+id/prefButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/prefText"/>
+        android:id="@+id/prefText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prefButton"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
