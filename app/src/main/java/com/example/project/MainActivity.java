@@ -44,11 +44,8 @@ public class MainActivity extends AppCompatActivity {
         myPreferenceEditor = myPreferenceRef.edit();
 
 
-        //TextView prefTextRef=new TextView(this);
-        //prefTextRef=(TextView)findViewById(R.id.prefText);
-        //prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
-
-
+        TextView prefTextRef= new TextView(this);
+        prefTextRef=(TextView)findViewById(R.id.prefText);
+        prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "blm."));
     }
-
 }
