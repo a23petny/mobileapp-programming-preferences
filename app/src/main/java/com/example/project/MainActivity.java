@@ -40,12 +40,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        myPreferenceRef = getPreferences(MODE_PRIVATE);
+        //myPreferenceRef = getPreferences(MODE_PRIVATE);
+        //myPreferenceEditor = myPreferenceRef.edit();
+        myPreferenceRef =  getSharedPreferences("MyPreferenceName", MODE_PRIVATE);
         myPreferenceEditor = myPreferenceRef.edit();
 
 
+
+        //TextView prefTextRef= new TextView(this);
+        //prefTextRef=(TextView)findViewById(R.id.prefText);
+        //prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "bUTTON"));
+    }
+
+    public void onResume(){
+        super.onResume();
         TextView prefTextRef= new TextView(this);
         prefTextRef=(TextView)findViewById(R.id.prefText);
-        prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "blm."));
+        prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
     }
 }

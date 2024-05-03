@@ -2,6 +2,7 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,32 +15,43 @@ public class MainActivity2 extends AppCompatActivity {
     private SharedPreferences myPreferenceRef;
     private SharedPreferences.Editor myPreferenceEditor;
 
+    /*public MainActivity2(SharedPreferences myPreferenceRef){
+        this.myPreferenceRef = myPreferenceRef;
+        this.myPreferenceEditor = myPreferenceRef.edit();
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        myPreferenceRef = getPreferences(MODE_PRIVATE);
+        //myPreferenceRef = getPreferences(MODE_PRIVATE);
+        //myPreferenceEditor = myPreferenceRef.edit();
+        myPreferenceRef = getSharedPreferences("MyPreferenceName", MODE_PRIVATE);
         myPreferenceEditor = myPreferenceRef.edit();
     }
 
     public void savePref(View view) {
         // Get the text
-        EditText newPrefText=new EditText(this);
-        newPrefText=(EditText)findViewById(R.id.settingseditview);
+        EditText newPrefText = new EditText(this);
+        newPrefText = (EditText) findViewById(R.id.settingseditview);
 
-        Log.d("asdasdasdasdasd",newPrefText.getText().toString());
+        Log.d("asdasdasdasdasd", newPrefText.getText().toString());
         // Store the new preference
         myPreferenceEditor.putString("MyAppPreferenceString", newPrefText.getText().toString());
         myPreferenceEditor.apply();
 
         // Display the new preference
-        TextView prefTextRef=new TextView(this);
-        prefTextRef=(TextView)findViewById(R.id.prefText);
+        TextView prefTextRef = new TextView(this);
+        prefTextRef = (TextView) findViewById(R.id.prefText);
         prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
 
         // Clear the EditText
         newPrefText.setText("");
 
+        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+        startActivity(intent);
     }
+
+
 }
