@@ -7,20 +7,19 @@
 - **Write Data:** `SecondActivity` allows writing data to Shared Preferences using an EditText. Data is then visible in `MainActivity` upon returning.
 
 
-```
+````java
         TextView prefTextRef= new TextView(this);
         prefTextRef=(TextView)findViewById(R.id.prefText);
         prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
     }
-```
-´´´´java
+````
+````java
         myPreferenceRef =  getSharedPreferences("MyPreferenceName", MODE_PRIVATE);
         myPreferenceEditor = myPreferenceRef.edit();
-
-´´´´
+````
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](android1.png)
 
 Läs gärna:
 
